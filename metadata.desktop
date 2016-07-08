@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Yamaha
+Comment=Controls Yamaha AV Reciever
+Encoding=UTF-8
+Icon=format-text-code
+ServiceTypes=Plasma/Applet
+Type=Service
+X-KDE-PluginInfo-Author=David Baum
+X-KDE-PluginInfo-Email=david.baum@naraesk.eu
+X-KDE-PluginInfo-Name=yamaha
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://github.com/naraesk/plasma-yamaha
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
