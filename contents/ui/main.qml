@@ -26,14 +26,12 @@ import QtQuick.Controls.Styles 1.2
 Item {
     id: root
     property string ip: plasmoid.configuration.ip
-    property string url
 
     Connections {
         target: plasmoid.configuration
     }
 
     Component.onCompleted: {
-        url = "http://" + root.ip +"/YamahaRemoteControl/ctrl"
         sync()
     }
 
@@ -120,6 +118,7 @@ Item {
     }
 
     function request(command) {
+        var url = "http://" + root.ip +"/YamahaRemoteControl/ctrl"
         var http = new XMLHttpRequest();
         http.open("POST", url, true);
         http.setRequestHeader("Content-type", "text/xml; charset=UTF-8");

@@ -22,8 +22,7 @@ import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.3
 
 Item {
-    property alias cfg_ip: project.text
-
+    property alias cfg_ip: ip.text
     id: root
     width: parent.width
     height: parent.height
@@ -39,9 +38,9 @@ Item {
             text: qsTr("IP address")
             Layout.alignment: Qt.AlignRight
         }
-        
+
         TextField {
-            id: project
+            id: ip
             Layout.fillWidth: true
             placeholderText: qsTr("Enter IP")
         }
