@@ -4,19 +4,19 @@ This is a simple plasma applet for KDE Plasma 5 to control your Yamava AV Reciev
 
 [![Patreon](https://img.shields.io/badge/back_on-patreon-red.svg)](https://www.patreon.com/naraesk)
 
-**Supported Features**
+### Supported Features
 * Power on/off
 * Mute
 * Switch input channel (e.g., between HDMI1 and HDMI2)
 * Configure speakers (distance, size and level)
 * Switch between multiple scenes/zones even if the reciever doesn't support it officially
 
-**Supported Yamaha recievers**
+### Supported Yamaha recievers
 * RX-Axxx
 * RX-Vxxx
 
 Testet with RX-V477 only
 
-# Installation
+### Installation
 
 plasmapkg2  -i *directory*
