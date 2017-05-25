@@ -20,10 +20,23 @@
 import QtQuick 2.5
 import org.kde.plasma.configuration 2.0
 
+
 ConfigModel {
     ConfigCategory {
          name: qsTr('General')
          icon: 'format-text-code'
          source: 'config/Config.qml'
+    }
+
+    ConfigCategory {
+         name: qsTr('Scene 1')
+         icon: 'format-text-code'
+         source: 'config/Scene1.qml'
+    }
+
+    ConfigCategory {
+         name: qsTr('Scene 2')
+         icon: 'format-text-code'
+         source: 'config/Scene2.qml'
     }
 } 

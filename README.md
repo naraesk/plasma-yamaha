@@ -6,4 +6,4 @@ Mail me if you need some help configuring it.
 
 ## Installation
 
-kpackagetool5 -i *directory*
+plasmapkg2  -i *directory*
