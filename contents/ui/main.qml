@@ -169,7 +169,7 @@ Item {
             onClicked: {
                 var status
                 if (checked) {
-                    var powerRequest = request('<YAMAHA_AV cmd="PUT"><Main_Zone><Power_Control><Power>On</Power></Power_Control></Main_Zone></YAMAHA_AV>')
+                    var powerRequest = Logic.request('<YAMAHA_AV cmd="PUT"><Main_Zone><Power_Control><Power>On</Power></Power_Control></Main_Zone></YAMAHA_AV>', ip)
                     timer2.start()
 //                 }
 //                     powerRequest.onreadystatechange = function() {
