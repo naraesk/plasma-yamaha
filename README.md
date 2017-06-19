@@ -2,8 +2,6 @@
 
 This is a simple plasma applet for KDE Plasma 5 to control your Yamava AV Reciever.
 
-[![Patreon](https://img.shields.io/badge/back_on-patreon-red.svg)](https://www.patreon.com/naraesk)
-
 ### Supported Features
 * Power on/off
 * Mute
