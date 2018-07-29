@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 by David Baum <david.baum@naraesk.eu>
+ * Copyright (C) 2018 by David Baum <david.baum@naraesk.eu>
  *
  * This file is part of plasma-yamaha.
  *
@@ -8,7 +8,7 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * plasma-codeship is distributed in the hope that it will be useful,
+ * plasma-yamaha is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
