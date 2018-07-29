@@ -2,9 +2,12 @@
 Name=Yamaha Control
 Comment=Controls Yamaha AV Reciever
 Encoding=UTF-8
-Icon=format-text-code
+Icon=tools-rip-audio-cd
 ServiceTypes=Plasma/Applet
 Type=Service
+X-Plasma-NotificationArea=true
+X-Plasma-NotificationAreaCategory=ApplicationStatus
+X-KDE-PluginInfo-Category=Multimedia
 X-KDE-PluginInfo-Author=David Baum
 X-KDE-PluginInfo-Email=david.baum@naraesk.eu
 X-KDE-PluginInfo-Name=yamaha

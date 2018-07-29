@@ -23,6 +23,8 @@ import QtQuick.Controls 1.4
 import QtQuick.Dialogs 1.2
 import QtQuick.Controls.Styles 1.2
 import "functions.js" as Logic
+import org.kde.plasma.plasmoid 2.0
+import org.kde.plasma.core 2.0 as PlasmaCore
 
 Item {
     id: root
@@ -118,6 +120,8 @@ Item {
     property string s2_subwoofer2_vol: plasmoid.configuration.s2_subwoofer2_vol
     property string s2_subwoofer2_dist: plasmoid.configuration.s2_subwoofer2_dist
     property string s2_subwoofer2_size: plasmoid.configuration.s2_subwoofer2_size
+    
+    property bool active: true
 
     Connections {
         target: plasmoid.configuration
@@ -127,22 +131,15 @@ Item {
         musicButton.checked = true
         sync()
     }
+    
+    Plasmoid.status: active ? PlasmaCore.Types.ActiveStatus : PlasmaCore.Types.PassiveStatus
+
 
     Timer {
         id: timer
-        interval: 5 * 60 * 1000 // 5 minutes
+        interval: 60 * 1000 / 2 // 30 seconds
         running: true
         repeat: true
-        onTriggered: {
-            sync()
-        }
-    }
-    
-    Timer {
-        id: timer2
-        interval: 10 * 1000
-        running: false
-        repeat: false
         onTriggered: {
             sync()
         }
@@ -156,6 +153,8 @@ Item {
         columns: 2
         anchors.fill: parent
         anchors.top: heading.bottom
+        width: parent.width
+        height: parent.height
 
         Label {
             text: qsTr("Power")
@@ -169,14 +168,7 @@ Item {
             onClicked: {
                 var status
                 if (checked) {
-                    var powerRequest = Logic.request('<YAMAHA_AV cmd="PUT"><Main_Zone><Power_Control><Power>On</Power></Power_Control></Main_Zone></YAMAHA_AV>', ip)
-                    timer2.start()
-//                 }
-//                     powerRequest.onreadystatechange = function() {
-//                         if (powerRequest.readyState == 4) {
-//                             sync()
-//                         }
-//                     }
+                    Logic.request('<YAMAHA_AV cmd="PUT"><Main_Zone><Power_Control><Power>On</Power></Power_Control></Main_Zone></YAMAHA_AV>', ip)
                 } else {
                     Logic.request('<YAMAHA_AV cmd="PUT"><Main_Zone><Power_Control><Power>Standby</Power></Power_Control></Main_Zone></YAMAHA_AV>', ip)
                 }
@@ -431,6 +423,17 @@ Item {
                     laptopButton.checked = true
                 } else {
                     ps4Button.checked = true
+                }
+            }
+        }
+        
+        var systemRequest = Logic.request('<YAMAHA_AV cmd="GET"><System><Config>GetParam</Config></System></YAMAHA_AV>', ip)
+        systemRequest.onreadystatechange = function() {
+            if(systemRequest.readyState === 4) {
+                if(systemRequest.responseText.includes("YAMAHA")) {
+                    active = true;
+                } else {
+                    active = false;
                 }
             }
         }
